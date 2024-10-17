@@ -4,7 +4,7 @@
   "description": "",
   "start": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --watch --recursive -R min",
     "tailwind:css": "postcss -w public/styles/tailwind.css -o public/styles/style.css",
     "livereload": "pnpm exec livereload -e 'pug,css'",
     "start": "node index.js"
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@eslint/js": "^9.12.0",
     "eslint": "^9.12.0",
+    "eslint-plugin-mocha": "^10.5.0",
     "globals": "^15.11.0",
     "livereload": "^0.9.3",
     "mocha": "^10.7.3",

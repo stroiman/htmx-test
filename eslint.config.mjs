@@ -1,9 +1,16 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-
+import mochaPlugin from "eslint-plugin-mocha";
 
 export default [
-  {files: ["**/*.js"], languageOptions: {sourceType: "commonjs"}},
-  {languageOptions: { globals: globals.node }},
+  mochaPlugin.configs.flat.recommended,
+  { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
+  { languageOptions: { globals: globals.node } },
   pluginJs.configs.recommended,
+  {
+    rules: {
+      "mocha/no-mocha-arrows": "off",
+    },
+  },
 ];
+
