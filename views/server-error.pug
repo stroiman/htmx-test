@@ -1,12 +1,8 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    title HTMX Learning Test
-    link(href="./styles/style.css", rel="stylesheet")
-  body
-    h1.text-xl Error
-    pre
-      code
-        = err.toString()
+extends layout.pug
+
+block content
+  h1.text-xl Login
+  pre
+    code
+      = err.toString()
 
