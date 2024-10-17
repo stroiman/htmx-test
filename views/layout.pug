@@ -11,7 +11,12 @@ html(lang="en")
     )
 
   body.bg-slate-200
-    block content
+    .h-screen.flex.flex-col
+      header.bg-slate-600.text-white.p-4
+        | Hello HTMX
+
+      main.flex-grow.flex
+        block content
 
     script
       | document.body.addEventListener('htmx:beforeSwap', function(evt) {
