@@ -14,10 +14,10 @@ mixin label()
 mixin login-form()
   div
     +label(for=username) Username
-    +input#username(type='text', required)
+    +input#username(type='text' name='username' required)
   div
     +label(for=password) Password
-    +input#password(type='password' placeholder='••••••••')
+    +input#password(type='password' name='password' placeholder='••••••••')
   div(class='flex items-center justify-between')
       div(class='flex items-start')
           div(class='flex items-center h-5')
