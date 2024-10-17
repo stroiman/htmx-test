@@ -11,6 +11,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.47)
+      body-parser:
+        specifier: ^1.20.3
+        version: 1.20.3
       connect-livereload:
         specifier: ^0.6.1
         version: 0.6.1
