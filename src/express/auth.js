@@ -11,7 +11,11 @@ router.get("/login", (req, res) =>
 
 router.post("/login", (req, res) => {
   if (req.body.username === "validuser") {
-    res.status(301).header("location", "/me").send();
+    res
+      .status(301)
+      // .header("location", "/me")
+      .header("HX-Push-Url", "/me")
+      .render("index");
   } else {
     res.status(400).render("auth/login-form", {
       formData: { username: req.body.username },

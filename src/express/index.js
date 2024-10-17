@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/me", (req, res) => {
+  res.render("index");
+});
+
 app.use((err, req, res, next) => {
   if (req.accepts("html")) {
     res.render("server-error", { err });
