@@ -1,3 +1,30 @@
 include includes.pug
 
-+login-form()
+form(
+  class='space-y-4 md:space-y-6'
+  hx-post="/auth/login" 
+  hx-swap="outerHTML"
+)
+  div
+    +label(for=username) Username
+    +input#username(type='text' name='username' required value=formData.username)
+  div
+    +label(for=password) Password
+    +input#password(type='password' name='password' placeholder='••••••••')
+  - if (invalidCredentials)
+    .text-red-700
+      | Username or password did not match
+  div(class='flex items-center justify-between')
+      div(class='flex items-start')
+          div(class='flex items-center h-5')
+            +checkbox#remember(aria-describedby='remember',required)
+          div(class='ml-3 text-sm')
+            label(for='remember',class='text-gray-500 dark:text-gray-300') Remember me
+  //-
+    <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
+  button(type='submit',class='w-full text-white bg-slate-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800') Sign in
+  //-
+    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+        Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+    </p>
+
