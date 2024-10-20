@@ -6,8 +6,8 @@
   "scripts": {
     "test": "mocha --watch --recursive -R min",
     "tailwind:css": "postcss -w public/styles/tailwind.css -o public/styles/style.css",
-    "livereload": "pnpm exec livereload -e 'pug,css'",
-    "start": "node src/index.js"
+    "livereload": "pnpm exec livereload -ee 'pug' 'views, src, public'",
+    "start": "node --watch src/index.js"
   },
   "keywords": [],
   "author": "",

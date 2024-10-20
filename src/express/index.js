@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/me", (req, res) => {
-  res.render("index");
+  res.render("me");
 });
 
 app.use((err, req, res, next) => {

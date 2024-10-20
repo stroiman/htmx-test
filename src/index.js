@@ -6,7 +6,11 @@ const { root } = require("./config");
 var livereloadServer = livereload.createServer({
   exts: ["pug", "css"],
 });
-livereloadServer.watch([path.join(root, "public"), path.join(root, "views")]);
+livereloadServer.watch([
+  path.join(root, "public"),
+  path.join(root, "views"),
+  path.join(root, "src"),
+]);
 app.use(require("connect-livereload")());
 
 app.listen(3344, () => {
