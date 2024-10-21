@@ -19,12 +19,4 @@ app.get("/me", (req, res) => {
   res.render("me");
 });
 
-app.use((err, req, res, next) => {
-  if (req.accepts("html")) {
-    res.render("server-error", { err });
-  } else {
-    next(err);
-  }
-});
-
 module.exports = app;

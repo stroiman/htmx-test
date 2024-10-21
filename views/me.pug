@@ -1,6 +1,9 @@
 extends std-page-layout.pug
+include ./headings.pug
 
 block main-content
-  h1.text-xl Me
-  p Hello
+  +h1().my-4 Me
+  div.border.rounded-lg.border-black.bg-white.p-3
+    +h2().mb-4 Say something
+    | Content
 
