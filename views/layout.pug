@@ -14,15 +14,18 @@ html(lang="en")
       crossorigin="anonymous"
     )
     script
-      | let disconnected = false
-      | document.addEventListener('LiveReloadConnect', function() {
-      |   console.log("Connected")
-      |   if (disconnected) {
-      |     window.document.location.reload()
-      |   }
-      | })
       | document.addEventListener('LiveReloadDisconnect', function() {
-      |   disconnected = true;
+      |   console.log("LiveReload disconnected")
+      |   const interval = setInterval(function() {
+      |     fetch("/").then(response => {
+      |       if (response.ok) {
+      |         window.document.location.reload()
+      |       }
+      |     })
+      |   }, 10)
+      |   setTimeout(function() {
+      |     clearInterval(interval)
+      |   }, 5000)
       | })
 
   body(class='bg-secondary-50 dark:bg-stone-800')
