@@ -5,7 +5,6 @@ const { root } = require("../config");
 
 const app = express();
 
-app.use(require("connect-livereload")());
 app.set("views", path.join(root, "views"));
 app.set("view engine", "pug");
 app.use(express.static(path.join(root, "public")));

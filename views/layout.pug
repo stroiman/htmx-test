@@ -13,20 +13,16 @@ html(lang="en")
       integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" 
       crossorigin="anonymous"
     )
-    script
-      | document.addEventListener('LiveReloadDisconnect', function() {
-      |   console.log("LiveReload disconnected")
-      |   const interval = setInterval(function() {
-      |     fetch("/").then(response => {
-      |       if (response.ok) {
-      |         window.document.location.reload()
-      |       }
-      |     })
-      |   }, 10)
-      |   setTimeout(function() {
-      |     clearInterval(interval)
-      |   }, 5000)
-      | })
+    if (process.env !== "production")
+      //- Load the live-reload script from the live reload server
+      script(
+        src="//localhost:35729/livereload.js?snipver=1"
+        async=""
+        defer=""
+      )
+      script(
+        src="/js/dev-tools.js"
+      )
 
   body(class='bg-secondary-50 dark:bg-stone-800')
     .min-h-screen.flex.flex-col
@@ -51,4 +47,3 @@ html(lang="en")
       |    evt.detail.isError = false;
       |  }
       | });
-
