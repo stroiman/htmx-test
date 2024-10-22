@@ -15,7 +15,7 @@ describe("/auth routes", () => {
         await request()
           .post("/auth/login")
           .send("username=validuser&password=validpassword")
-          .expect(301);
+          .expect(303);
         //.expect("location", "/me");
       });
     });

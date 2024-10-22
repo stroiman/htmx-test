@@ -11,8 +11,9 @@ router.get("/login", (req, res) =>
 
 router.post("/login", (req, res) => {
   if (req.body.username === "validuser") {
+    req.session.loggedIn = true;
     res
-      .status(301)
+      .status(303)
       //.header("location", "/me")
       .header("HX-Push-Url", "/me")
       .render("me");
