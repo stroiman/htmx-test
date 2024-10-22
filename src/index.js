@@ -11,6 +11,7 @@ livereloadServer.watch([
   path.join(root, "views"),
   path.join(root, "src"),
 ]);
+
 app.use((err, req, res, next) => {
   if (req.accepts("html")) {
     res.render("server-error", { err });
