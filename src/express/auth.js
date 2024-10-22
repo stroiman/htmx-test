@@ -15,7 +15,7 @@ router.post("/login", (req, res) => {
       .status(303)
       //.header("location", "/me")
       .header("HX-Push-Url", "/me")
-      .render("index");
+      .render("me");
     //.send();
   } else {
     res.status(400).render("auth/login-form", {
