@@ -4,7 +4,7 @@
   "description": "",
   "start": "index.js",
   "scripts": {
-    "test": "mocha --watch --recursive -R min",
+    "test": "mocha --watch --recursive --extension js --extension pug -R min",
     "tailwind:css": "postcss -w public/styles/tailwind.css -o public/styles/style.css",
     "livereload": "pnpm exec livereload -ee 'pug' 'views, src, public'",
     "start": "node --watch src/index.js"
