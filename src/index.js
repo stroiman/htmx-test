@@ -1,7 +1,11 @@
-const app = require("./express");
+const { initializeApp } = require("./express");
+const express = require("express");
 var livereload = require("livereload");
 const path = require("node:path");
 const { root } = require("./config");
+
+const app = express();
+initializeApp(app);
 
 var livereloadServer = livereload.createServer({
   exts: ["pug", "css"],
