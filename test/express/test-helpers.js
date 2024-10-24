@@ -1,6 +1,6 @@
 const { initializeApp } = require("../../src/express");
-const supertest = require("supertest");
 const express = require("express");
+const supertest = require("supertest");
 
 const expressApp = express();
 initializeApp(expressApp);

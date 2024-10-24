@@ -5,6 +5,12 @@ const path = require("node:path");
 const { root } = require("./config");
 
 const app = express();
+app.use((req, res, next) => {
+  res.locals.serverSettings = {
+    enableLiveReload: process.env.NODE_ENV === "development",
+  };
+  next();
+});
 initializeApp(app);
 
 var livereloadServer = livereload.createServer({

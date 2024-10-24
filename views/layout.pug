@@ -13,7 +13,7 @@ html(lang="en")
       integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" 
       crossorigin="anonymous"
     )
-    if (process.env !== "production")
+    if (serverSettings && serverSettings.enableLiveReload)
       //- Load the live-reload script from the live reload server
       script(
         src="//localhost:35729/livereload.js?snipver=1"
